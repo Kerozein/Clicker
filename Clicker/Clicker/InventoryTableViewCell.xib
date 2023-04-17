@@ -17,14 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqi-vA-lb8">
-                        <rect key="frame" x="10" y="10" width="249" height="21"/>
+                        <rect key="frame" x="10" y="10" width="212" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YrN-Cj-Aym">
+                        <rect key="frame" x="295.5" y="12.5" width="19.5" height="15"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Qqi-vA-lb8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1lC-zJ-pyf"/>
+                    <constraint firstAttribute="trailing" secondItem="YrN-Cj-Aym" secondAttribute="trailing" constant="5" id="HwZ-gi-lta"/>
+                    <constraint firstItem="YrN-Cj-Aym" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Leu-it-Jlz"/>
                     <constraint firstItem="Qqi-vA-lb8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="W6n-kZ-jMi"/>
                 </constraints>
             </tableViewCellContentView>
@@ -35,4 +40,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="121.875"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+    </resources>
 </document>
