@@ -42,7 +42,7 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = itemData[indexPath.row]
         
-        if(Inventory.sharedInstance.money > Int(itemPrice[indexPath.row].dropLast())!){
+        if(Inventory.sharedInstance.money >= Int(itemPrice[indexPath.row].dropLast())!){
             Inventory.sharedInstance.inventoryItems.append(cell)
             Inventory.sharedInstance.update = true
             Inventory.sharedInstance.money -= Int(itemPrice[indexPath.row].dropLast())!
