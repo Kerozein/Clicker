@@ -100,18 +100,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flV-7L-rn3">
-                                <rect key="frame" x="20" y="154" width="140" height="48"/>
+                                <rect key="frame" x="20" y="154" width="201" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="foot_red" translatesAutoresizingMaskIntoConstraints="NO" id="zRz-RL-SGJ">
+                                <rect key="frame" x="86" y="327" width="243" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5DT-ym-ahd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Marche" image="figure.walk" catalog="system" id="9Rl-Xd-mgF"/>
                     <connections>
+                        <outlet property="footprint" destination="zRz-RL-SGJ" id="Tzc-kZ-nHz"/>
                         <outlet property="moneyLabel" destination="MxV-If-lwD" id="YOo-z4-cWD"/>
                         <outlet property="speedLabel" destination="flV-7L-rn3" id="qhp-7k-lsi"/>
                     </connections>
@@ -178,6 +183,7 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="cursorarrow.click" catalog="system" width="128" height="124"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <image name="foot_red" width="112.5" height="112.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
