@@ -16,6 +16,8 @@ class ClickerViewController: UIViewController {
     @IBOutlet weak var Monster: UIButton!
     var baseDamage:Float = 0.1
     var timer = Timer()
+    var prevId:Int = 1
+    var id:Int = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,9 +56,14 @@ class ClickerViewController: UIViewController {
     
     func changeMonster(){
         let numberOfMonsters:Int = 5
-        let id:Int = Int.random(in: 1..<numberOfMonsters+1)
+        id = Int.random(in: 1..<numberOfMonsters+1)
+        while(prevId==id)
+        {
+            id = Int.random(in: 1..<numberOfMonsters+1)
+        }
         Monster.setImage(UIImage(named: "m\(id)"), for: .normal)
         health.progress = 1.0
+        prevId = id
     }
     
 
