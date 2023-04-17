@@ -30,9 +30,9 @@ class ClickerViewController: UIViewController {
         if(Inventory.sharedInstance.buffTime > 0)
         {
             Inventory.sharedInstance.buffTime -= 1
-            if(Inventory.sharedInstance.buffTime==0){
-                Inventory.sharedInstance.buff = 1.0
-            }
+        }
+        else {
+            Inventory.sharedInstance.buff = 1.0
         }
     }
     func increaseMoney(){

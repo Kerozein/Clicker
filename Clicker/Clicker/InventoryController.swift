@@ -28,12 +28,39 @@ class InventoryController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") {action, indexPath in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Supprimer") {action, indexPath in
             self.myItems.remove(at: indexPath.row)
             Inventory.sharedInstance.inventoryItems.remove(at: indexPath.row)
             self.inventoryTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.showToast(message: "Item supprimé", font: .systemFont(ofSize: 12.0))
         }
-        return [deleteAction]
+        
+        let useAction = UITableViewRowAction(style: .normal, title: "Utiliser") {action, indexPath in
+            
+            switch self.myItems[indexPath.row] {
+            case "Epée":
+                Inventory.sharedInstance.buff = 1.1
+            case "Dague":
+                Inventory.sharedInstance.buff = 1.2
+            case "Claymore":
+                Inventory.sharedInstance.buff = 1.4
+            case "Espadon":
+                Inventory.sharedInstance.buff = 1.3
+            case "Rapière":
+                Inventory.sharedInstance.buff = 1.6
+            case "Potion":
+                Inventory.sharedInstance.buff = 1.05
+            default:
+                Inventory.sharedInstance.buff = 1
+            }
+            Inventory.sharedInstance.buffTime = 20
+            self.myItems.remove(at: indexPath.row)
+            Inventory.sharedInstance.inventoryItems.remove(at: indexPath.row)
+            self.inventoryTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.showToast(message: "Item utilisé pour une durée de 20 secondes", font: .systemFont(ofSize: 12.0))
+            
+        }
+        return [deleteAction,useAction]
     }
     
     
@@ -56,15 +83,4 @@ class InventoryController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

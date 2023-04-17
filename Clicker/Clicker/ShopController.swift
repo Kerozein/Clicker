@@ -11,7 +11,7 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var tableView: UITableView!
     
-    let itemData = ["Epée","Dague","Claymore","Espadon","Rapière","Potion"]
+    let itemData = ["Epée","Dague","Claymore","Machette","Rapière","Potion"]
     let itemPrice = ["250$", "300$", "450$","350$","600$","150$"]
     let price = [1,2,3,4,5,6]
     override func viewDidLoad() {
@@ -42,28 +42,33 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = itemData[indexPath.row]
         
-        /*let inventoryItem:InventoryController = self.storyboard?.instantiateViewController(withIdentifier: "inventory") as! InventoryController
-        */
-        
         if(Inventory.sharedInstance.money > Int(itemPrice[indexPath.row].dropLast())!){
             Inventory.sharedInstance.inventoryItems.append(cell)
             Inventory.sharedInstance.update = true
             Inventory.sharedInstance.money -= Int(itemPrice[indexPath.row].dropLast())!
+            self.showToast(message: "\(itemData[indexPath.row]) achetée", font: .systemFont(ofSize: 12.0))
+        }
+        else {
+            self.showToast(message: "Vous n'avez pas assez d'argent", font: .systemFont(ofSize: 12.0))
         }
 
-
     }
-    
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UIViewController {
+    func showToast(message: String, font:UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height - 200, width: 300, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10
+        toastLabel.clipsToBounds = true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseIn, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in toastLabel.removeFromSuperview()})
     }
-    */
-
 }
