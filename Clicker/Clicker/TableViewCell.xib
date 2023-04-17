@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Clicker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ch-N2-MHq">
+                        <rect key="frame" x="10" y="10" width="41.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gs-lh-Zkc">
+                        <rect key="frame" x="235" y="5" width="75" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="gray" title="Acheter"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIM-Ul-asA">
+                        <rect key="frame" x="183" y="10" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0Gs-lh-Zkc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="B1k-p1-sH3"/>
+                    <constraint firstItem="0Gs-lh-Zkc" firstAttribute="leading" secondItem="aIM-Ul-asA" secondAttribute="trailing" constant="10" id="HHj-FS-fch"/>
+                    <constraint firstItem="6Ch-N2-MHq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Mor-bs-NG1"/>
+                    <constraint firstAttribute="trailing" secondItem="0Gs-lh-Zkc" secondAttribute="trailing" constant="10" id="XtB-OK-ksi"/>
+                    <constraint firstItem="6Ch-N2-MHq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="g5w-kf-zGo"/>
+                    <constraint firstItem="aIM-Ul-asA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hKT-JC-3WU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buyItemButton" destination="0Gs-lh-Zkc" id="B5j-UK-iUK"/>
+                <outlet property="itemLabel" destination="6Ch-N2-MHq" id="SHo-fX-Znc"/>
+                <outlet property="itemPriceLabel" destination="aIM-Ul-asA" id="rh3-mK-giU"/>
+            </connections>
+            <point key="canvasLocation" x="180" y="119"/>
+        </tableViewCell>
+    </objects>
+</document>
