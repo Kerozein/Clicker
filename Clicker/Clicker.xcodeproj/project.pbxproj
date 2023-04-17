@@ -21,6 +21,7 @@
 		B610C1D229DB28C30020F285 /* ClickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1D129DB28C30020F285 /* ClickerUITests.swift */; };
 		B610C1D429DB28C30020F285 /* ClickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1D329DB28C30020F285 /* ClickerUITestsLaunchTests.swift */; };
 		B66A122129ED282B0014620C /* WalkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A122029ED282B0014620C /* WalkingController.swift */; };
+		B6D5777029ED63EC00C9A6DC /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5776F29ED63EC00C9A6DC /* Inventory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,7 @@
 		B610C1D129DB28C30020F285 /* ClickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerUITests.swift; sourceTree = "<group>"; };
 		B610C1D329DB28C30020F285 /* ClickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B66A122029ED282B0014620C /* WalkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController.swift; sourceTree = "<group>"; };
-		B66A122229ED2D460014620C /* 1_Roscoff_Morlaix_A_parcours.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = 1_Roscoff_Morlaix_A_parcours.gpx; path = ../../../Documents/1_Roscoff_Morlaix_A_parcours.gpx; sourceTree = "<group>"; };
+		B6D5776F29ED63EC00C9A6DC /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +91,6 @@
 		B610C1A429DB28C20020F285 = {
 			isa = PBXGroup;
 			children = (
-				B66A122229ED2D460014620C /* 1_Roscoff_Morlaix_A_parcours.gpx */,
 				B610C1AF29DB28C20020F285 /* Clicker */,
 				B610C1C629DB28C30020F285 /* ClickerTests */,
 				B610C1D029DB28C30020F285 /* ClickerUITests */,
@@ -112,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				B66A122029ED282B0014620C /* WalkingController.swift */,
-				7F511FF929DB3B0B00D29C34 /* ShopController.swift */,
 				B610C1B029DB28C20020F285 /* AppDelegate.swift */,
 				B610C1B229DB28C20020F285 /* SceneDelegate.swift */,
 				B610C1B429DB28C20020F285 /* ClickerController.swift */,
@@ -124,6 +123,7 @@
 				7FF1E99029ED293B00E77E5E /* TableViewCell.swift */,
 				7FF1E99129ED293B00E77E5E /* TableViewCell.xib */,
 				7FF1E99429ED416800E77E5E /* InventoryController.swift */,
+				B6D5776F29ED63EC00C9A6DC /* Inventory.swift */,
 			);
 			path = Clicker;
 			sourceTree = "<group>";
@@ -277,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D5777029ED63EC00C9A6DC /* Inventory.swift in Sources */,
 				7FF1E99229ED293B00E77E5E /* TableViewCell.swift in Sources */,
 				B610C1B529DB28C20020F285 /* ClickerController.swift in Sources */,
 				7FF1E99529ED416800E77E5E /* InventoryController.swift in Sources */,

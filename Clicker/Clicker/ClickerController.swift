@@ -15,14 +15,13 @@ class ClickerViewController: UIViewController {
     @IBOutlet weak var health: UIProgressView!
     @IBOutlet weak var Monster: UIButton!
     var baseDamage:Float = 0.1
-    var money:Int = 0
     var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.timerFun), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateMoneyLabel), userInfo: nil, repeats: true)
         changeMonster()
-        updateMoneyLabel()
     }
     @objc func timerFun(){
         decreaseQuality()
@@ -31,9 +30,9 @@ class ClickerViewController: UIViewController {
     
     func decreaseQuality(){}
     func increaseMoney(){
-        money+=100
+        Inventory.sharedInstance.money+=100
     }
-    func updateMoneyLabel(){moneyLabel.text = "Argent : \(money)$"}
+    @objc func updateMoneyLabel(){moneyLabel.text = "Argent : \(Inventory.sharedInstance.money)$"}
     
     
     @IBAction func onHit(_ sender: Any) {
