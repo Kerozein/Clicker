@@ -17,6 +17,7 @@
 		B610C1C829DB28C30020F285 /* ClickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1C729DB28C30020F285 /* ClickerTests.swift */; };
 		B610C1D229DB28C30020F285 /* ClickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1D129DB28C30020F285 /* ClickerUITests.swift */; };
 		B610C1D429DB28C30020F285 /* ClickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1D329DB28C30020F285 /* ClickerUITestsLaunchTests.swift */; };
+		B66A122129ED282B0014620C /* WalkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A122029ED282B0014620C /* WalkingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		B610C1CD29DB28C30020F285 /* ClickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B610C1D129DB28C30020F285 /* ClickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerUITests.swift; sourceTree = "<group>"; };
 		B610C1D329DB28C30020F285 /* ClickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B66A122029ED282B0014620C /* WalkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController.swift; sourceTree = "<group>"; };
+		B66A122229ED2D460014620C /* 1_Roscoff_Morlaix_A_parcours.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = 1_Roscoff_Morlaix_A_parcours.gpx; path = ../../../Documents/1_Roscoff_Morlaix_A_parcours.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		B610C1A429DB28C20020F285 = {
 			isa = PBXGroup;
 			children = (
+				B66A122229ED2D460014620C /* 1_Roscoff_Morlaix_A_parcours.gpx */,
 				B610C1AF29DB28C20020F285 /* Clicker */,
 				B610C1C629DB28C30020F285 /* ClickerTests */,
 				B610C1D029DB28C30020F285 /* ClickerUITests */,
@@ -101,6 +105,8 @@
 		B610C1AF29DB28C20020F285 /* Clicker */ = {
 			isa = PBXGroup;
 			children = (
+				B66A122029ED282B0014620C /* WalkingController.swift */,
+				7F511FF929DB3B0B00D29C34 /* ShopController.swift */,
 				B610C1B029DB28C20020F285 /* AppDelegate.swift */,
 				B610C1B229DB28C20020F285 /* SceneDelegate.swift */,
 				B610C1B429DB28C20020F285 /* ClickerController.swift */,
@@ -108,7 +114,6 @@
 				B610C1B929DB28C30020F285 /* Assets.xcassets */,
 				B610C1BB29DB28C30020F285 /* LaunchScreen.storyboard */,
 				B610C1BE29DB28C30020F285 /* Info.plist */,
-				7F511FF929DB3B0B00D29C34 /* ShopController.swift */,
 			);
 			path = Clicker;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				7F511FFA29DB3B0B00D29C34 /* ShopController.swift in Sources */,
 				B610C1B129DB28C20020F285 /* AppDelegate.swift in Sources */,
 				B610C1B329DB28C20020F285 /* SceneDelegate.swift in Sources */,
+				B66A122129ED282B0014620C /* WalkingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

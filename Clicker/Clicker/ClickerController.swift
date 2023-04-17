@@ -33,18 +33,22 @@ class ClickerViewController: UIViewController {
     func increaseMoney(){
         money+=100
     }
-    func updateMoneyLabel(){moneyLabel.text = "Money : \(money)$"}
+    func updateMoneyLabel(){moneyLabel.text = "Argent : \(money)$"}
     
     
     @IBAction func onHit(_ sender: Any) {
-        print("hit")
         health.progress -= baseDamage
         if(health.progress == 0.0){
-            changeMonster()
-            increaseMoney()
-            updateMoneyLabel()
+            onMonsterKill()
         }
     }
+    
+    func onMonsterKill(){
+        changeMonster()
+        increaseMoney()
+        updateMoneyLabel()
+    }
+    
     func changeMonster(){
         let numberOfMonsters:Int = 2
         let id:Int = Int.random(in: 1..<numberOfMonsters+1)
