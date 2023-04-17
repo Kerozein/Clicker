@@ -9,6 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    // Les labels et bouton présent pour chaque cellule de la tableView
     @IBOutlet var itemLabel: UILabel!
     @IBOutlet var itemPriceLabel: UILabel!
     @IBOutlet var buyItemButton: UIButton!

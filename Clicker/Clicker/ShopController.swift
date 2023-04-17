@@ -11,7 +11,9 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var tableView: UITableView!
     
+    // liste des items pouvant être acheter dans le shop
     let itemData = ["Epée","Dague","Claymore","Machette","Rapière","Potion"]
+    // prix pour chaque item
     let itemPrice = ["250$", "300$", "450$","350$","600$","150$"]
     let price = [1,2,3,4,5,6]
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
     }
     
+    // Implémentation d'une table view pour avoir la liste de tous les items
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemData.count
     }
@@ -37,11 +40,13 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    // Fonction du click du bouton "Acheter"
     @objc func buyItemButtonAction(sender:UIButton) {
         let indexPath = IndexPath(row:sender.tag, section:0)
         
         let cell = itemData[indexPath.row]
         
+        // on vérifie si l'utilisateur a assez d'argent pour acheter l'item, avant de l'ajouter à l'inventaire
         if(Inventory.sharedInstance.money >= Int(itemPrice[indexPath.row].dropLast())!){
             Inventory.sharedInstance.inventoryItems.append(cell)
             Inventory.sharedInstance.update = true
@@ -55,6 +60,7 @@ class ShopController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
+//Ajout d'une extension pour pouvoir faire des toasts.
 extension UIViewController {
     func showToast(message: String, font:UIFont) {
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height - 200, width: 300, height: 35))

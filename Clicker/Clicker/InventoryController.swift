@@ -8,6 +8,7 @@
 import UIKit
 class InventoryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // On récupère les items achetés depuis la classe inventaire
     var myItems = Inventory.sharedInstance.inventoryItems
     @IBOutlet var inventoryTableView: UITableView!
     
@@ -22,12 +23,13 @@ class InventoryController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
-    
+    // Implémentation de la table view avec la possibilité de mettre des actions personnaliser (ici, supprimer et utiliser)
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // Action qui permet de supprimer un item.
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Supprimer") {action, indexPath in
             self.myItems.remove(at: indexPath.row)
             Inventory.sharedInstance.inventoryItems.remove(at: indexPath.row)
@@ -35,6 +37,7 @@ class InventoryController: UIViewController, UITableViewDelegate, UITableViewDat
             self.showToast(message: "Item supprimé", font: .systemFont(ofSize: 12.0))
         }
         
+        // Action permettant d'uiliser un objet. On vérifie de quel objet il s'agit et on modifie le multiplicateur de dégat en conséquence.
         let useAction = UITableViewRowAction(style: .normal, title: "Utiliser") {action, indexPath in
             if(Inventory.sharedInstance.buffTime == 0){
                 switch self.myItems[indexPath.row] {
@@ -80,6 +83,7 @@ class InventoryController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    // Actualiser les objets de l'inventaire
     @objc func getItems(){
         if(Inventory.sharedInstance.update == true){
             myItems = Inventory.sharedInstance.inventoryItems
