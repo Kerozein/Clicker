@@ -12,4 +12,6 @@ class Inventory{
     var money = 0
     var update = false
     var inventoryItems = [String]()
+    var buff = 1.0
+    var buffTime = 0
 }

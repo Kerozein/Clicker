@@ -19,16 +19,20 @@ class ClickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.timerFun), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.decreaseQuality), userInfo: nil, repeats: true)
         Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateMoneyLabel), userInfo: nil, repeats: true)
         changeMonster()
     }
-    @objc func timerFun(){
-        decreaseQuality()
-        return
-    }
     
-    func decreaseQuality(){}
+    @objc func decreaseQuality(){
+        if(Inventory.sharedInstance.buffTime > 0)
+        {
+            Inventory.sharedInstance.buffTime -= 1
+            if(Inventory.sharedInstance.buffTime==0){
+                Inventory.sharedInstance.buff = 1.0
+            }
+        }
+    }
     func increaseMoney(){
         Inventory.sharedInstance.money+=100
     }
@@ -36,7 +40,7 @@ class ClickerViewController: UIViewController {
     
     
     @IBAction func onHit(_ sender: Any) {
-        health.progress -= baseDamage
+        health.progress -= baseDamage*Float(Inventory.sharedInstance.buff)
         if(health.progress == 0.0){
             onMonsterKill()
         }
@@ -49,7 +53,7 @@ class ClickerViewController: UIViewController {
     }
     
     func changeMonster(){
-        let numberOfMonsters:Int = 2
+        let numberOfMonsters:Int = 5
         let id:Int = Int.random(in: 1..<numberOfMonsters+1)
         Monster.setImage(UIImage(named: "m\(id)"), for: .normal)
         health.progress = 1.0
