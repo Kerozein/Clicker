@@ -24,10 +24,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tpa-bj-6eo" secondAttribute="trailing" id="4kT-yr-Vp9"/>
-                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="H7e-5w-K5J"/>
-                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lc4-fJ-Ez9"/>
-                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mBF-gP-ZiL"/>
+                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7UX-h2-TCj"/>
+                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b06-rm-ice"/>
+                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kwl-iR-dcX"/>
+                            <constraint firstItem="Tpa-bj-6eo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yBw-Qo-Zy4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shop" image="cart.fill" catalog="system" id="NBW-Eo-KE6"/>
@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="-499"/>
+            <point key="canvasLocation" x="944.92753623188412" y="-499.55357142857139"/>
         </scene>
         <!--Clicker-->
         <scene sceneID="CHj-pi-8gp">
@@ -128,20 +128,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN2-xX-eZK">
-                                <rect key="frame" x="62" y="139" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tfx-aF-hQz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KNR-QB-POU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tfx-aF-hQz" firstAttribute="leading" secondItem="KNR-QB-POU" secondAttribute="leading" id="Jl4-sJ-6jE"/>
+                            <constraint firstItem="KNR-QB-POU" firstAttribute="bottom" secondItem="tfx-aF-hQz" secondAttribute="bottom" id="mjZ-Sv-Hh8"/>
+                            <constraint firstItem="KNR-QB-POU" firstAttribute="trailing" secondItem="tfx-aF-hQz" secondAttribute="trailing" id="nrw-xX-9bU"/>
+                            <constraint firstItem="tfx-aF-hQz" firstAttribute="top" secondItem="KNR-QB-POU" secondAttribute="top" id="o2X-ZH-hss"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inventaire" image="bag.fill" catalog="system" id="Vei-Ya-dxQ"/>
                     <connections>
-                        <outlet property="myItem" destination="eN2-xX-eZK" id="C7U-2h-BmA"/>
+                        <outlet property="inventoryTableView" destination="tfx-aF-hQz" id="2m5-zw-got"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKp-ac-weK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,8 @@
 		7FF1E99229ED293B00E77E5E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1E99029ED293B00E77E5E /* TableViewCell.swift */; };
 		7FF1E99329ED293B00E77E5E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF1E99129ED293B00E77E5E /* TableViewCell.xib */; };
 		7FF1E99529ED416800E77E5E /* InventoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1E99429ED416800E77E5E /* InventoryController.swift */; };
+		7FF1E99829ED720F00E77E5E /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1E99629ED720F00E77E5E /* InventoryTableViewCell.swift */; };
+		7FF1E99929ED720F00E77E5E /* InventoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF1E99729ED720F00E77E5E /* InventoryTableViewCell.xib */; };
 		B610C1B129DB28C20020F285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1B029DB28C20020F285 /* AppDelegate.swift */; };
 		B610C1B329DB28C20020F285 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1B229DB28C20020F285 /* SceneDelegate.swift */; };
 		B610C1B529DB28C20020F285 /* ClickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C1B429DB28C20020F285 /* ClickerController.swift */; };
@@ -46,6 +48,8 @@
 		7FF1E99029ED293B00E77E5E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7FF1E99129ED293B00E77E5E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		7FF1E99429ED416800E77E5E /* InventoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryController.swift; sourceTree = "<group>"; };
+		7FF1E99629ED720F00E77E5E /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		7FF1E99729ED720F00E77E5E /* InventoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryTableViewCell.xib; sourceTree = "<group>"; };
 		B610C1AD29DB28C20020F285 /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B610C1B029DB28C20020F285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B610C1B229DB28C20020F285 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				7FF1E99129ED293B00E77E5E /* TableViewCell.xib */,
 				7FF1E99429ED416800E77E5E /* InventoryController.swift */,
 				B6D5776F29ED63EC00C9A6DC /* Inventory.swift */,
+				7FF1E99629ED720F00E77E5E /* InventoryTableViewCell.swift */,
+				7FF1E99729ED720F00E77E5E /* InventoryTableViewCell.xib */,
 			);
 			path = Clicker;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF1E99929ED720F00E77E5E /* InventoryTableViewCell.xib in Resources */,
 				B610C1BD29DB28C30020F285 /* LaunchScreen.storyboard in Resources */,
 				7FF1E99329ED293B00E77E5E /* TableViewCell.xib in Resources */,
 				B610C1BA29DB28C30020F285 /* Assets.xcassets in Resources */,
@@ -278,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D5777029ED63EC00C9A6DC /* Inventory.swift in Sources */,
+				7FF1E99829ED720F00E77E5E /* InventoryTableViewCell.swift in Sources */,
 				7FF1E99229ED293B00E77E5E /* TableViewCell.swift in Sources */,
 				B610C1B529DB28C20020F285 /* ClickerController.swift in Sources */,
 				7FF1E99529ED416800E77E5E /* InventoryController.swift in Sources */,
