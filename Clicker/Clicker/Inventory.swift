@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Classe "Singleton" qui va nous servir a faire passer les données d'un controller a un autre
 class Inventory{
     static let sharedInstance = Inventory()
     var money = 0
@@ -14,4 +14,6 @@ class Inventory{
     var inventoryItems = [String]()
     var buff = 1.0
     var buffTime = 0
+    var hitCooldown = 0
+    var cooldownLeft = 0
 }

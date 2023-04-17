@@ -36,28 +36,34 @@ class InventoryController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         let useAction = UITableViewRowAction(style: .normal, title: "Utiliser") {action, indexPath in
-            
-            switch self.myItems[indexPath.row] {
-            case "Epée":
-                Inventory.sharedInstance.buff = 1.1
-            case "Dague":
-                Inventory.sharedInstance.buff = 1.2
-            case "Claymore":
-                Inventory.sharedInstance.buff = 1.4
-            case "Espadon":
-                Inventory.sharedInstance.buff = 1.3
-            case "Rapière":
-                Inventory.sharedInstance.buff = 1.6
-            case "Potion":
-                Inventory.sharedInstance.buff = 1.05
-            default:
-                Inventory.sharedInstance.buff = 1
+            if(Inventory.sharedInstance.buffTime == 0){
+                switch self.myItems[indexPath.row] {
+                case "Epée":
+                    Inventory.sharedInstance.buff = 3
+                    Inventory.sharedInstance.hitCooldown = 1
+                case "Dague":
+                    Inventory.sharedInstance.buff = 1.2
+                case "Claymore":
+                    Inventory.sharedInstance.buff = 5
+                    Inventory.sharedInstance.hitCooldown = 4
+                case "Machette":
+                    Inventory.sharedInstance.buff = 1.3
+                case "Rapière":
+                    Inventory.sharedInstance.buff = 1.6
+                case "Potion":
+                    Inventory.sharedInstance.buff = 1.05
+                default:
+                    Inventory.sharedInstance.buff = 1
+                }
+                Inventory.sharedInstance.buffTime = 20
+                self.myItems.remove(at: indexPath.row)
+                Inventory.sharedInstance.inventoryItems.remove(at: indexPath.row)
+                self.inventoryTableView.deleteRows(at: [indexPath], with: .automatic)
+                self.showToast(message: "Item utilisé pour une durée de 20 secondes", font: .systemFont(ofSize: 12.0))
             }
-            Inventory.sharedInstance.buffTime = 20
-            self.myItems.remove(at: indexPath.row)
-            Inventory.sharedInstance.inventoryItems.remove(at: indexPath.row)
-            self.inventoryTableView.deleteRows(at: [indexPath], with: .automatic)
-            self.showToast(message: "Item utilisé pour une durée de 20 secondes", font: .systemFont(ofSize: 12.0))
+            else{
+                self.showToast(message: "Un objet est deja en cours d'utilisation", font: .systemFont(ofSize: 12.0))
+            }
             
         }
         return [deleteAction,useAction]

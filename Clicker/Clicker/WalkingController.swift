@@ -12,7 +12,7 @@ import CoreLocation
 class WalkingController: UIViewController, CLLocationManagerDelegate {
     var timer = Timer()
     var isMoving:Bool = false
-    var count = 0
+    var count:Int = 0
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var footprint: UIImageView!
@@ -21,16 +21,21 @@ class WalkingController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initatialisation du detecteur de position/vitesse
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        timerFun()
+        
+        resetSpeedAndPicture()
         updateMoneyLabel()
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.timerFun), userInfo: nil, repeats: true)
+        
+        //Lancement des timers
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.resetSpeedAndPicture), userInfo: nil, repeats: true)
         Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateMoneyLabel), userInfo: nil, repeats: true)
     }
     
+    //Fonction appellé lorsqu'un deplacement est detecté
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         // Sert a ne pas utiliser le premier appel du detecteur de vitesse
@@ -39,7 +44,8 @@ class WalkingController: UIViewController, CLLocationManagerDelegate {
             return
         }
         
-        if(location.speed > 2)
+        // On s'assure que le joueur se déplace a plus de 2km/h avant de lui donner une récompense
+        if(location.speed*3.6 > 2)
         {
             footprint.image=UIImage(named: "foot_green")
             isMoving=true
@@ -48,7 +54,7 @@ class WalkingController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @objc func timerFun(){
+    @objc func resetSpeedAndPicture(){
         if(isMoving == false){
             speedLabel.text = "Vitesse : 0.0 km/h"
             footprint.image=UIImage(named: "foot_red")
